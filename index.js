@@ -5,7 +5,7 @@ const app = express();
 
 // Route Handler
 app.get("/", (req, res) => {
-  res.send({ hi: "there" });
+  res.send({ hi: "buddy" });
 });
 
 // Add port ENV
