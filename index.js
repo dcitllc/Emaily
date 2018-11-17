@@ -32,6 +32,9 @@ app.get(
   })
 );
 
+// Route hander to handle the case when user visits /auth/google/callback
+app.get("/auth/google/callback", passport.authenticate("google"));
+
 // Add port ENV
 const PORT = process.env.PORT || 5000;
 
