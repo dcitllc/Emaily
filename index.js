@@ -1,7 +1,11 @@
 // Import Express
 const express = require("express");
+const mongoose = require("mongoose");
+const keys = require("./config/keys");
 // Import Passport Config
 require("./services/passport");
+
+mongoose.connect(keys.mongoURI);
 
 // Create application
 const app = express();
