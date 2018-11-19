@@ -15,6 +15,13 @@ passport.serializeUser((user, done) => {
   done(null, user.id); // user.id is the id that mongo assigns not the one google assigns
 });
 
+// Deserialize user
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
+  });
+});
+
 // Create new instance of Google Strategy
 passport.use(
   new GoogleStrategy(
