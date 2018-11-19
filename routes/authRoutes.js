@@ -13,6 +13,12 @@ module.exports = app => {
   // Route hander to handle the case when user visits /auth/google/callback
   app.get("/auth/google/callback", passport.authenticate("google"));
 
+  // Route handler to handle logout
+  app.get("/api/logout", (req, res) => {
+    req.logout();
+    res.send(req.user);
+  });
+
   // Route handler to handle authenticated user
   app.get("/api/current_user", (req, res) => {
     res.send(req.user);
