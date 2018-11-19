@@ -10,6 +10,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Hello Dan</h1>
         </header>
+        <a href="/auth/google">Sign in with Google</a>
       </div>
     );
   }
