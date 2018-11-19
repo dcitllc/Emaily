@@ -8,7 +8,10 @@ const keys = require("./config/keys");
 require("./models/User"); // This must come before we access passport
 require("./services/passport");
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(
+  keys.mongoURI,
+  { useNewUrlParser: true }
+);
 
 // Create application
 const app = express();
