@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
-// Dummy components to test with react router
 import Header from "./Header";
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
@@ -11,7 +10,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <div>
+        <div className="container">
           {/* By placing header above the routes its always visible.  */}
           <Header />
           <Route exact path="/" component={Landing} />
