@@ -11,12 +11,18 @@ module.exports = app => {
   );
 
   // Route hander to handle the case when user visits /auth/google/callback
-  app.get("/auth/google/callback", passport.authenticate("google"));
+  app.get(
+    "/auth/google/callback",
+    passport.authenticate("google"),
+    (req, res) => {
+      res.redirect("/surveys");
+    }
+  );
 
   // Route handler to handle logout
   app.get("/api/logout", (req, res) => {
     req.logout();
-    res.send(req.user);
+    res.redirect("/");
   });
 
   // Route handler to handle authenticated user
