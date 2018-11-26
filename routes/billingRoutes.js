@@ -9,6 +9,12 @@ module.exports = app => {
       description: "$5 for 5 credits",
       source: req.body.id
     });
-    console.log(charge);
+    // Gets reference to user from passport.
+    req.user.credits += 5;
+    // Save the user
+    const user = await req.user.save();
+
+    //Respond to req
+    res.send(user);
   });
 };
