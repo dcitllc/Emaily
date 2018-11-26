@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 // Import Passport Config
 require("./models/User"); // This must come before we access passport
@@ -15,6 +16,10 @@ mongoose.connect(
 
 // Create application
 const app = express();
+
+// Body Parser
+app.use(bodyParser.json());
+
 // Tell express to make use of cookies
 app.use(
   cookieSession({
@@ -27,6 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/authRoutes")(app);
+require("./routes/billingRoutes")(app);
 
 // Add port ENV
 const PORT = process.env.PORT || 5000;
