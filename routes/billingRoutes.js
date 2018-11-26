@@ -3,6 +3,10 @@ const stripe = require("stripe")(keys.stripeSecretKey);
 
 module.exports = app => {
   app.post("/api/stripe", async (req, res) => {
+    if (!req.user) {
+      return res.status(401).send({ error: "You must log in!" });
+    }
+
     const charge = await stripe.charges.create({
       amount: 500,
       currency: "usd",
@@ -14,7 +18,7 @@ module.exports = app => {
     // Save the user
     const user = await req.user.save();
 
-    //Respond to req
+    //Send user model back to who made the request
     res.send(user);
   });
 };
