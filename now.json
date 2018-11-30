@@ -1,3 +1,11 @@
 {
-  "version": 2
+  "version": 2,
+  "env": {
+    "googleClientID": "413207652398-1migf3jsd0q763gp0rolj4buig8326dp.apps.googleusercontent.com",
+    "googleClientSecret": "hW_ZVKFOwenI-MCyKUaXnN6i",
+    "mongoURI": "mongodb://dan:password1@ds163683.mlab.com:63683/emaily--dev",
+    "cookieKey": "dshfuisahfkjshfdshflkajshl",
+    "stripePublishableKey": "pk_test_Js6ZnX6y7SOFVAcT0H4G9H5p",
+    "stripeSecretKey": "sk_test_fCNvz5GmTzn9SlCAGdv7Dn6N"
+  }
 }
