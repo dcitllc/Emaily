@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 // Import Passport Config
 require("./models/User"); // This must come before we access passport
+require("./models/Survey");
 require("./services/passport");
 
 mongoose.connect(
